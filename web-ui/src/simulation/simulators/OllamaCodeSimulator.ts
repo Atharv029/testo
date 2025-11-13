@@ -9,7 +9,7 @@ import type { HumanSimulator, SimulationAction, SimulationConfig, SimulationStat
  * simulate a human writing code with the cursor at a specific position.
  * 
  * Prerequisites:
- * 1. Ollama must be running locally (http://localhost:11434)
+ * 1. Ollama must be running locally (http://localhost:11435)
  * 2. The model must be pulled: `ollama pull qwen2.5-coder:0.5b-base`
  * 
  * The simulator uses FIM tokens to provide context before and after the cursor,
@@ -38,7 +38,7 @@ export class OllamaCodeSimulator implements HumanSimulator {
     this.config = config;
     this.problemDescription = config.problemDescription;
     // Use localhost for Ollama API - adjust port if needed
-    this.ollamaUrl = "http://localhost:11434";
+    this.ollamaUrl = "http://localhost:11435";
     // Use the same base coder model as policy_models for FIM completion
     // Note: Ensure this model is pulled with: ollama pull qwen2.5-coder:0.5b-base
     this.modelName = "qwen2.5-coder:0.5b-base";
