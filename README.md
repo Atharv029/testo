@@ -120,7 +120,7 @@ You have two options:
 ```bash
   uv run run.py --port 3001
 ```
-> **Note:** When choosing a new port, please avoid `8000`, `8080`, `8001`, `8008`, `3003`, and `11435`, as they are reserved for other CodeAssist services.
+> **Note:** When choosing a new port, please avoid `8000`, `8080`, `8001`, `8008`, `3003`, and `11500`, as they are reserved for other CodeAssist services.
 
 # Contributing
 

@@ -276,7 +276,7 @@ def setup_ollama(config: Config) -> docker.models.containers.Container:
         auto_remove=False,
         name="codeassist-ollama",
         ports={
-            "11434/tcp": 11435,  # Expose Ollama API port
+            "11434/tcp": 11500,  # Expose Ollama API port
         },
         volumes={
             f"{os.getcwd()}/ollama-data": {"bind": "/root/.ollama", "mode": "rw"},
@@ -944,8 +944,8 @@ def start_containers(config: Config):
         progress.update(task, advance=1)
 
         # Check Ollama API
-        if not requests.get("http://localhost:11435").ok:
-            raise Exception("Ollama API is not reachable at http://localhost:11435")
+        if not requests.get("http://localhost:11500").ok:
+            raise Exception("Ollama API is not reachable at http://localhost:11500")
 
         CONSOLE.print("Ollama is healthy.", style=LOG_COLOR)
         progress.update(task, advance=1)
